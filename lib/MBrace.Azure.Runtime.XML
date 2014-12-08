@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>MBrace.Azure.Runtime</name></assembly>
+<members>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Nessos.MBrace.Azure.Runtime.Service.#ctor(Nessos.MBrace.Azure.Runtime.Configuration,System.Int32,Nessos.MBrace.Store.CloudFileStoreConfiguration)">
+<summary>
+ MBrace Runtime Service.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:Nessos.MBrace.Azure.Runtime.Service">
+<summary>
+ MBrace Runtime Service.
+</summary>
+</member>
+<member name="M:Nessos.MBrace.Azure.Runtime.Worker.initWorker(Nessos.MBrace.Azure.Runtime.RuntimeState,Nessos.MBrace.Continuation.ResourceRegistry,System.Int32)">
+ <summary>
+     Initializes a worker loop. Worker polls task queue of supplied
+     runtime for available tasks and executes as appropriate.
+ </summary>
+ <param name="runtime">Runtime to subscribe to.</param>
+ <param name="maxConcurrentTasks">Maximum tasks to be executed concurrently by worker.</param>
+</member>
+<member name="T:Nessos.MBrace.Azure.Runtime.Worker">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:System.AssemblyVersionInformation">
+
+</member>
+</members>
+</doc>

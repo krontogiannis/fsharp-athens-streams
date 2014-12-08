@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "slides", "slides", "{218E71CD-5FD1-4E49-BF51-59CCFD4FD1CE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{2D0A159A-0147-4B5E-BB7A-51C426BE79CF}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{0B479377-71B6-4B38-A94C-9F42BFF0E23F}"
+	ProjectSection(SolutionItems) = preProject
+		lib\MBrace.Azure.Client.dll = lib\MBrace.Azure.Client.dll
+		lib\MBrace.Azure.Client.dll.config = lib\MBrace.Azure.Client.dll.config
+		lib\MBrace.Azure.Client.pdb = lib\MBrace.Azure.Client.pdb
+		lib\MBrace.Azure.Runtime.Common.dll = lib\MBrace.Azure.Runtime.Common.dll
+		lib\MBrace.Azure.Runtime.Common.dll.config = lib\MBrace.Azure.Runtime.Common.dll.config
+		lib\MBrace.Azure.Runtime.Common.pdb = lib\MBrace.Azure.Runtime.Common.pdb
+		lib\MBrace.Azure.Runtime.Common.XML = lib\MBrace.Azure.Runtime.Common.XML
+		lib\MBrace.Azure.Runtime.dll = lib\MBrace.Azure.Runtime.dll
+		lib\MBrace.Azure.Runtime.dll.config = lib\MBrace.Azure.Runtime.dll.config
+		lib\MBrace.Azure.Runtime.pdb = lib\MBrace.Azure.Runtime.pdb
+		lib\MBrace.Azure.Runtime.Standalone.exe = lib\MBrace.Azure.Runtime.Standalone.exe
+		lib\MBrace.Azure.Runtime.Standalone.exe.config = lib\MBrace.Azure.Runtime.Standalone.exe.config
+		lib\MBrace.Azure.Runtime.Standalone.pdb = lib\MBrace.Azure.Runtime.Standalone.pdb
+		lib\MBrace.Azure.Runtime.Standalone.XML = lib\MBrace.Azure.Runtime.Standalone.XML
+		lib\MBrace.Azure.Runtime.XML = lib\MBrace.Azure.Runtime.XML
+		lib\MBrace.Core.dll = lib\MBrace.Core.dll
+		lib\MBrace.Core.pdb = lib\MBrace.Core.pdb
+		lib\MBrace.Core.xml = lib\MBrace.Core.xml
+		lib\MBrace.Library.dll = lib\MBrace.Library.dll
+		lib\MBrace.Library.pdb = lib\MBrace.Library.pdb
+		lib\MBrace.Library.xml = lib\MBrace.Library.xml
+		lib\MBrace.Runtime.Core.dll = lib\MBrace.Runtime.Core.dll
+		lib\MBrace.Runtime.Core.pdb = lib\MBrace.Runtime.Core.pdb
+		lib\MBrace.Runtime.Core.xml = lib\MBrace.Runtime.Core.xml
+		lib\MBrace.Streams.dll = lib\MBrace.Streams.dll
+		lib\MBrace.Streams.pdb = lib\MBrace.Streams.pdb
+		lib\MBrace.Streams.XML = lib\MBrace.Streams.XML
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E82BB040-2AC0-41DC-BF62-1D4620D4D501}"
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
