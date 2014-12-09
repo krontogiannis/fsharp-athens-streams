@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>MBrace.Azure.Client</name></assembly>
+<members>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="P:Nessos.MBrace.Azure.Client.Runtime.Configuration">
+<summary>
+ Gets the runtime associated configuration.
+</summary>
+</member>
+<member name="P:Nessos.MBrace.Azure.Client.Runtime.ClientLogger">
+<summary>
+ Client logger.
+</summary>
+</member>
+<member name="P:Nessos.MBrace.Azure.Client.Runtime.ClientId">
+<summary>
+ Instance identifier.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Nessos.MBrace.Azure.Client.Runtime.RunAsync``1(Nessos.MBrace.Cloud{``0},Microsoft.FSharp.Core.FSharpOption{System.Threading.CancellationToken})">
+<summary>
+ Asynchronously execute a workflow on the distributed runtime.
+</summary>
+</member>
+<member name="M:Nessos.MBrace.Azure.Client.Runtime.RunAsTask``1(Nessos.MBrace.Cloud{``0},Microsoft.FSharp.Core.FSharpOption{System.Threading.CancellationToken})">
+<summary>
+ Execute a workflow on the distributed runtime as task.
+</summary>
+</member>
+<member name="M:Nessos.MBrace.Azure.Client.Runtime.Run``1(Nessos.MBrace.Cloud{``0},Microsoft.FSharp.Core.FSharpOption{System.Threading.CancellationToken})">
+<summary>
+ Execute a workflow on the distributed runtime synchronously
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:Nessos.MBrace.Azure.Client.Runtime.GetHandle(Nessos.MBrace.Azure.Runtime.Configuration,Microsoft.FSharp.Core.FSharpOption{System.Int32})">
+ <summary>
+ Gets a handle for a remote runtime.
+ </summary>
+ <param name="config">Runtime configuration.</param>
+ <param name="waitWorkerCount">Wait until the specified number of workers join the runtime.</param>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Nessos.MBrace.Azure.Client.Runtime">
+ <summary>
+ Windows Azure Runtime client.
+ </summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:System.AssemblyVersionInformation">
+
+</member>
+</members>
+</doc>

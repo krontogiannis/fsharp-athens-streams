@@ -104,6 +104,9 @@
 <member name="">
 
 </member>
+<member name="">
+
+</member>
 <member name="M:Nessos.MBrace.Streams.CloudArray`1.GetPartition(System.Int32)">
 <summary>
  Fetch nth partition as an array.
@@ -178,13 +181,13 @@
 <member name="">
 
 </member>
+<member name="">
+
+</member>
 <member name="T:Nessos.MBrace.Streams.Descriptor`1">
 <summary>
  CloudArray description.
 </summary>
-</member>
-<member name="">
-
 </member>
 <member name="">
 
