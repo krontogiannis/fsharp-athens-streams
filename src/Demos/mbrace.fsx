@@ -10,7 +10,7 @@ open Nessos.MBrace.Azure.Runtime
 let config = 
     { Configuration.Default with
         StorageConnectionString = Helpers.azureStorageConn
-        ServiceBusConnectionString =  Helpers.serviceBusConn }
+        ServiceBusConnectionString = Helpers.serviceBusConn }
 
 
 let runtime = Runtime.GetHandle(config)
@@ -74,3 +74,46 @@ let ca = caProcess.AwaitResult()
 
 let ps' = runtime.CreateProcess(getTop' ca 20, name = "getTop with cloudarray")
 let r' = ps'.AwaitResult()
+
+
+// PREPROCESS
+
+let splitByChunkSize chunkSize (ts : 'T []) =
+    if chunkSize <= 0 then invalidArg "chunkSize" "must be positive."
+    elif chunkSize > ts.Length then invalidArg "chunkSize" "chunk size greater than array size."
+    let q, r = ts.Length / chunkSize , ts.Length % chunkSize
+    [|
+        for i in 0 .. q-1 do
+            yield ts.[ i * chunkSize .. (i + 1) * chunkSize - 1]
+
+        if r > 0 then yield ts.[q * chunkSize .. ]
+    |]
+
+let preprocess =
+    cloud {
+        do! Cloud.Log "Reading files"
+        let! files = CloudFile.Enumerate "wikipedia"
+        do! Cloud.Log(sprintf "Read %d files" files.Length)
+        let split = files |> splitByChunkSize 15000
+        do! Cloud.Log(sprintf "Split in  %d " split.Length)
+        return! 
+            split 
+            |> Array.map (fun files -> 
+                cloud {
+                    let lines = seq {
+                        for f in files do
+                            let text = Async.RunSynchronously(f.Read(CloudFile.ReadAllText))
+                            yield text
+                    }
+                    return! CloudFile.WriteLines(lines, path = "wiki/" + System.Guid.NewGuid().ToString("N")) })
+            |> Cloud.Parallel
+    }
+
+let p = runtime.CreateProcess preprocess
+
+p.ShowLogs()
+
+p.AwaitResult()
+
+
+
