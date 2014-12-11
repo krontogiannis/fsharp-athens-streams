@@ -1294,6 +1294,15 @@
 <member name="">
 
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="T:Nessos.MBrace.Azure.Runtime.Common.Storage">
 
 </member>
@@ -1813,9 +1822,6 @@
  Defines if the message belongs to a Queue or a Topic.
  Queue messages with Affinity are messages that failed to Complete in a Subscription.
 </summary>
-</member>
-<member name="">
-
 </member>
 <member name="">
 
