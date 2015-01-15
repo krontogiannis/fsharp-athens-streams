@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "slides", "slides", "{218E71CD-5FD1-4E49-BF51-59CCFD4FD1CE}"
 EndProject
@@ -77,6 +77,11 @@ Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "MBraceAzureCloudService", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBraceWorkerRole", "MBraceWorkerRole\MBraceWorkerRole.csproj", "{92FDEBF4-3643-40D4-BF5B-58AFB10B266E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F484BD2C-784B-4660-B2B9-F1524C7975DC}"
+	ProjectSection(SolutionItems) = preProject
+		Performance1.psess = Performance1.psess
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -101,5 +106,8 @@ Global
 		{DF4661CC-A8B7-418F-A977-51A4B6CBC803} = {E82BB040-2AC0-41DC-BF62-1D4620D4D501}
 		{E0F90F75-1D05-419E-8547-91734F1E14B4} = {E82BB040-2AC0-41DC-BF62-1D4620D4D501}
 		{92FDEBF4-3643-40D4-BF5B-58AFB10B266E} = {E82BB040-2AC0-41DC-BF62-1D4620D4D501}
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
 	EndGlobalSection
 EndGlobal

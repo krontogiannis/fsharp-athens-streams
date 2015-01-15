@@ -17,8 +17,95 @@
  Collects elements into a mutable result container.
 </summary>
 </member>
-<member name="">
-
+<member name="P:Nessos.Streams.Context`1.Cts">
+<summary>
+ The current CancellationTokenSource
+</summary>
+</member>
+<member name="P:Nessos.Streams.Context`1.Complete">
+<summary>
+ The completed continuation
+</summary>
+</member>
+<member name="P:Nessos.Streams.Context`1.Cont">
+<summary>
+ The composed continutation
+</summary>
+</member>
+<member name="T:Nessos.Streams.Context`1">
+<summary>
+ Represents the current executing contex
+</summary>
+</member>
+<member name="P:Nessos.Streams.Iterable.Iterator">
+<summary>
+ Iterator for on-demand processing
+</summary>
+</member>
+<member name="P:Nessos.Streams.Iterable.Bulk">
+<summary>
+ Function for bulk processing
+</summary>
+</member>
+<member name="T:Nessos.Streams.Iterable">
+<summary>
+ Provides functions for iteration
+</summary>
+</member>
+<member name="P:Nessos.Streams.Iterator.Dispose">
+<summary>
+ Cleanup function
+</summary>
+</member>
+<member name="P:Nessos.Streams.Iterator.TryAdvance">
+<summary>
+ Function for on-demand processing
+</summary>
+</member>
+<member name="T:Nessos.Streams.Iterator">
+<summary>
+ Provides on-demand iteration 
+</summary>
+</member>
+<member name="P:Nessos.Streams.ParIterator`1.Cts">
+<summary>
+ The current CancellationTokenSource
+</summary>
+</member>
+<member name="P:Nessos.Streams.ParIterator`1.Func">
+<summary>
+ The composed continutation with &apos;T for the current value
+</summary>
+</member>
+<member name="P:Nessos.Streams.ParIterator`1.Index">
+<summary>
+ The index of the current element from the parallel source
+</summary>
+</member>
+<member name="T:Nessos.Streams.ParIterator`1">
+<summary>
+ Represents the iteration function
+</summary>
+</member>
+<member name="P:Nessos.Streams.ParStream`1.SourceType">
+<summary>
+ The Type of iteration source
+</summary>
+</member>
+<member name="P:Nessos.Streams.ParStream`1.PreserveOrdering">
+<summary>
+ A flag that indicates that the ordering in the subsequent query operators will be preserved.
+</summary>
+</member>
+<member name="P:Nessos.Streams.ParStream`1.DegreeOfParallelism">
+<summary>
+ The number of concurrently executing tasks
+</summary>
+</member>
+<member name="M:Nessos.Streams.ParStream`1.Stream">
+<summary>
+ Returns the sequential Stream
+</summary>
 </member>
 <member name="M:Nessos.Streams.ParStream`1.Apply``1(Nessos.Streams.Collector{`0,``0})">
 <summary>
@@ -29,6 +116,56 @@
 <summary>
  Represents a parallel Stream of values.
 </summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:Nessos.Streams.SourceType">
+<summary>
+ The Type of iteration source
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
 </member>
 <member name="">
 
@@ -233,18 +370,6 @@
  Helpers for parallel sorting.
 </summary>
 </member>
-<member name="M:Nessos.Streams.ParStream.skip``1(System.Int32,Nessos.Streams.ParStream{``0})">
- <summary>Returns a parallel stream that skips N elements of the input parallel stream and then yields the remaining elements of the stream.</summary>
- <param name="n">The number of items to skip.</param>
- <param name="stream">The input parallel stream.</param>
- <returns>The result parallel stream.</returns>
-</member>
-<member name="M:Nessos.Streams.ParStream.take``1(System.Int32,Nessos.Streams.ParStream{``0})">
- <summary>Returns the elements of the parallel stream up to a specified count.</summary>
- <param name="n">The number of items to take.</param>
- <param name="stream">The input parallel stream.</param>
- <returns>The result prallel stream.</returns>
-</member>
 <member name="M:Nessos.Streams.ParStream.forall``1(Microsoft.FSharp.Core.FSharpFunc{``0,System.Boolean},Nessos.Streams.ParStream{``0})">
  <summary>Tests if all elements of the parallel stream satisfy the given predicate.</summary>
  <param name="predicate">A function to test each source element for a condition.</param>
@@ -324,6 +449,11 @@
  <param name="source">The input parallel stream.</param>
  <returns>The maximum item.</returns>  
 </member>
+<member name="M:Nessos.Streams.ParStream.toSeq``1(Nessos.Streams.ParStream{``0})">
+ <summary>Creates an Seq from the given parallel stream.</summary>
+ <param name="stream">The input parallel stream.</param>
+ <returns>The result Seq.</returns>    
+</member>
 <member name="M:Nessos.Streams.ParStream.toResizeArray``1(Nessos.Streams.ParStream{``0})">
  <summary>Creates an ResizeArray from the given parallel stream.</summary>
  <param name="stream">The input parallel stream.</param>
@@ -357,15 +487,17 @@
  <param name="f">A function to apply to each element of the parallel stream.</param>
  <param name="stream">The input parallel stream.</param>    
 </member>
-<member name="M:Nessos.Streams.ParStream.unordered``1(Nessos.Streams.ParStream{``0})">
- <summary>Returns a parallel stream that is unordered.</summary>
+<member name="M:Nessos.Streams.ParStream.skip``1(System.Int32,Nessos.Streams.ParStream{``0})">
+ <summary>Returns a parallel stream that skips N elements of the input parallel stream and then yields the remaining elements of the stream.</summary>
+ <param name="n">The number of items to skip.</param>
  <param name="stream">The input parallel stream.</param>
- <returns>The result parallel stream as unordered.</returns>
+ <returns>The result parallel stream.</returns>
 </member>
-<member name="M:Nessos.Streams.ParStream.ordered``1(Nessos.Streams.ParStream{``0})">
- <summary>Returns a parallel stream that preserves ordering.</summary>
+<member name="M:Nessos.Streams.ParStream.take``1(System.Int32,Nessos.Streams.ParStream{``0})">
+ <summary>Returns the elements of the parallel stream up to a specified count.</summary>
+ <param name="n">The number of items to take.</param>
  <param name="stream">The input parallel stream.</param>
- <returns>The result parallel stream as ordered.</returns>
+ <returns>The result prallel stream.</returns>
 </member>
 <member name="M:Nessos.Streams.ParStream.choose``2(Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.FSharpOption{``1}},Nessos.Streams.ParStream{``0})">
  <summary>Applies the given function to each element of the parallel stream and returns the parallel stream comprised of the results for each element where the function returns Some with some value.</summary>
@@ -391,9 +523,31 @@
  <param name="stream">The input parallel stream.</param>
  <returns>The result parallel stream.</returns>
 </member>
+<member name="M:Nessos.Streams.ParStream.mapi``2(Microsoft.FSharp.Core.FSharpFunc{System.Int32,Microsoft.FSharp.Core.FSharpFunc{``0,``1}},Nessos.Streams.ParStream{``0})">
+ <summary>Transforms each element of the input parallel stream. The integer index passed to the function indicates the index of element being transformed.</summary>
+ <param name="f">A function to transform items from the input parallel stream.</param>
+ <param name="stream">The input parallel stream.</param>
+ <returns>The result parallel stream.</returns>
+</member>
 <member name="M:Nessos.Streams.ParStream.map``2(Microsoft.FSharp.Core.FSharpFunc{``0,``1},Nessos.Streams.ParStream{``0})">
  <summary>Transforms each element of the input parallel stream.</summary>
  <param name="f">A function to transform items from the input parallel stream.</param>
+ <param name="stream">The input parallel stream.</param>
+ <returns>The result parallel stream.</returns>
+</member>
+<member name="M:Nessos.Streams.ParStream.unordered``1(Nessos.Streams.ParStream{``0})">
+ <summary>Returns a parallel stream that is unordered.</summary>
+ <param name="stream">The input parallel stream.</param>
+ <returns>The result parallel stream as unordered.</returns>
+</member>
+<member name="M:Nessos.Streams.ParStream.ordered``1(Nessos.Streams.ParStream{``0})">
+ <summary>Returns a parallel stream that preserves ordering.</summary>
+ <param name="stream">The input parallel stream.</param>
+ <returns>The result parallel stream as ordered.</returns>
+</member>
+<member name="M:Nessos.Streams.ParStream.withDegreeOfParallelism``1(System.Int32,Nessos.Streams.ParStream{``0})">
+ <summary>Returns a parallel stream with a new degree of parallelism.</summary>
+ <param name="degreeOfParallelism">The degree of parallelism.</param>
  <param name="stream">The input parallel stream.</param>
  <returns>The result parallel stream.</returns>
 </member>
@@ -415,43 +569,10 @@
 <member name="">
 
 </member>
-<member name="">
-
-</member>
 <member name="T:Nessos.Streams.ParStream">
 <summary>
  Provides basic operations on Parallel Streams.
 </summary>
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
 </member>
 <member name="M:Nessos.Streams.Stream.groupUntil``1(System.Boolean,Microsoft.FSharp.Core.FSharpFunc{``0,System.Boolean},Nessos.Streams.Stream{``0})">
  <summary>
@@ -619,18 +740,26 @@
  <param name="stream">The input stream.</param>
  <returns>The result stream.</returns>
 </member>
+<member name="M:Nessos.Streams.Stream.cache``1(Nessos.Streams.Stream{``0})">
+ <summary>Creates a cached version of the input stream.</summary>
+ <param name="source">The input stream.</param>
+ <returns>The cached stream.</returns>
+</member>
 <member name="M:Nessos.Streams.Stream.collect``2(Microsoft.FSharp.Core.FSharpFunc{``0,Nessos.Streams.Stream{``1}},Nessos.Streams.Stream{``0})">
  <summary>Transforms each element of the input stream to a new stream and flattens its elements.</summary>
  <param name="f">A function to transform items from the input stream.</param>
  <param name="stream">The input stream.</param>
  <returns>The result stream.</returns>
 </member>
-<member name="">
-
-</member>
 <member name="M:Nessos.Streams.Stream.flatMap``2(Microsoft.FSharp.Core.FSharpFunc{``0,Nessos.Streams.Stream{``1}},Nessos.Streams.Stream{``0})">
  <summary>Transforms each element of the input stream to a new stream and flattens its elements.</summary>
  <param name="f">A function to transform items from the input stream.</param>
+ <param name="stream">The input stream.</param>
+ <returns>The result stream.</returns>
+</member>
+<member name="M:Nessos.Streams.Stream.mapi``2(Microsoft.FSharp.Core.FSharpFunc{System.Int32,Microsoft.FSharp.Core.FSharpFunc{``0,``1}},Nessos.Streams.Stream{``0})">
+ <summary>Transforms each element of the input stream. The integer index passed to the function indicates the index (from 0) of element being transformed.</summary>
+ <param name="f">A function to transform items and also supplies the current index.</param>
  <param name="stream">The input stream.</param>
  <returns>The result stream.</returns>
 </member>

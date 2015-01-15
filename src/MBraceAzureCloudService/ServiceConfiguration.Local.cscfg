@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ServiceConfiguration serviceName="MBraceAzureCloudService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="4" osVersion="*" schemaVersion="2014-06.2.4">
   <Role name="MBraceWorkerRole">
-    <Instances count="10" />
-    <ConfigurationSettings />
+    <Instances count="35" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Enabled" value="true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountUsername" value="nessos" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountEncryptedPassword" value="MIIBnQYJKoZIhvcNAQcDoIIBjjCCAYoCAQAxggFOMIIBSgIBADAyMB4xHDAaBgNVBAMME1dpbmRvd3MgQXp1cmUgVG9vbHMCEGyV+mtrAlK0TIEyUX0gSMswDQYJKoZIhvcNAQEBBQAEggEAdAW7nO5iwG7tcJTGoY5gaqFoX8xKePIh9Lv7YYIIy+AQahPxV61nJZz7myKW+mJ4o6dPBzilcJswM7ssoVkcENR7gkihwGzJF8pEANaBXuUgywYGku/GOYE6SmU++Hnnt2u6DbeiFNcSCMKH/MOA8yLBOOnBZQMHNhsmiF3MBkAHV24aH2kmdG5tbIExm5602Mkik2WEza9xum1pFgMn9qpIr954UojQmWCBiRg3XaumiO5P72GiudsH0xgGx+FAFvONYe/gtT5bRG5mFOnMDEU14utKRKynISpW9LlQp9ir/RhqFjgqHjqIGW2gpYs+wkFiKCp/R8v+Pz94W4nNvzAzBgkqhkiG9w0BBwEwFAYIKoZIhvcNAwcECA3356kAsib5gBCr7aE+OPrsv77dRyGvazbY" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountExpiration" value="2016-01-12T23:59:59.0000000+02:00" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteForwarder.Enabled" value="true" />
+    </ConfigurationSettings>
+    <Certificates>
+      <Certificate name="Microsoft.WindowsAzure.Plugins.RemoteAccess.PasswordEncryption" thumbprint="5593B6929F86FA51B8503B3BC372601EBFBA263A" thumbprintAlgorithm="sha1" />
+    </Certificates>
   </Role>
 </ServiceConfiguration>

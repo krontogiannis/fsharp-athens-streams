@@ -341,6 +341,20 @@
  </summary>
  <param name="id">input assembly id.</param>
 </member>
+<member name="M:Nessos.Vagrant.Vagrant.Initialize(System.Collections.Generic.IEnumerable{System.Reflection.Assembly},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Collections.FSharpList{Nessos.Vagrant.IDynamicAssemblyProfile}},Microsoft.FSharp.Core.FSharpOption{Nessos.FsPickler.ITypeNameConverter},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{Nessos.Vagrant.AssemblyLoadPolicy})">
+ <summary>
+     Initializes a new Vagrant instance.
+ </summary>
+ <param name="ignoredAssemblies">Ignore assemblies and their dependencies.</param>
+ <param name="cacheDirectory">Temp folder used for assembly compilation and caching. Defaults to system temp folder.</param>
+ <param name="profiles">Dynamic assembly configuration profiles.</param>
+ <param name="typeConverter">FsPickler type name converter.</param>
+ <param name="requireLoadedInAppDomain">
+     Demand all transitive dependencies be loadable in current AppDomain.
+     If unset, only loaded assemblies are listed as dependencies. Defaults to true.
+ </param>
+ <param name="loadPolicy">Default assembly load policy.</param>
+</member>
 <member name="M:Nessos.Vagrant.Vagrant.Initialize(Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Collections.FSharpList{Nessos.Vagrant.IDynamicAssemblyProfile}},Microsoft.FSharp.Core.FSharpOption{Nessos.FsPickler.ITypeNameConverter},Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Core.FSharpFunc{System.Reflection.Assembly,System.Boolean}},Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{Nessos.Vagrant.AssemblyLoadPolicy})">
  <summary>
      Initializes a new Vagrant instance.

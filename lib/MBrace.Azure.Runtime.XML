@@ -44,7 +44,37 @@
 <member name="">
 
 </member>
-<member name="M:Nessos.MBrace.Azure.Runtime.Service.#ctor(Nessos.MBrace.Azure.Runtime.Configuration,System.Int32,Nessos.MBrace.Store.CloudFileStoreConfiguration)">
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:MBrace.Azure.Runtime.Service.#ctor(MBrace.Azure.Runtime.Configuration)">
 <summary>
  MBrace Runtime Service.
 </summary>
@@ -52,12 +82,12 @@
 <member name="">
 
 </member>
-<member name="T:Nessos.MBrace.Azure.Runtime.Service">
+<member name="T:MBrace.Azure.Runtime.Service">
 <summary>
  MBrace Runtime Service.
 </summary>
 </member>
-<member name="M:Nessos.MBrace.Azure.Runtime.Worker.initWorker(Nessos.MBrace.Azure.Runtime.RuntimeState,Nessos.MBrace.Continuation.ResourceRegistry,System.Int32)">
+<member name="M:MBrace.Azure.Runtime.Worker.initWorker(MBrace.Azure.Runtime.RuntimeState,System.Int32,MBrace.Continuation.ResourceRegistry,MBrace.Store.ICloudFileStore,MBrace.Store.ICloudChannelProvider,MBrace.Store.ICloudAtomProvider)">
  <summary>
      Initializes a worker loop. Worker polls task queue of supplied
      runtime for available tasks and executes as appropriate.
@@ -65,7 +95,7 @@
  <param name="runtime">Runtime to subscribe to.</param>
  <param name="maxConcurrentTasks">Maximum tasks to be executed concurrently by worker.</param>
 </member>
-<member name="T:Nessos.MBrace.Azure.Runtime.Worker">
+<member name="T:MBrace.Azure.Runtime.Worker">
 
 </member>
 <member name="">

@@ -1,4 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ServiceDefinition name="MBraceAzureCloudService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2014-06.2.4">
-  <WorkerRole name="MBraceWorkerRole" vmsize="Medium" />
+  <WorkerRole name="MBraceWorkerRole" vmsize="Medium">
+	  <LocalResources>
+		  <LocalStorage name="CustomTempLocalStore"
+					   cleanOnRoleRecycle="true"
+						sizeInMB="400000" />
+
+	  </LocalResources>
+    <Imports>
+      <Import moduleName="RemoteAccess" />
+      <Import moduleName="RemoteForwarder" />
+    </Imports>
+  </WorkerRole>
 </ServiceDefinition>

@@ -9,10 +9,10 @@ using Microsoft.WindowsAzure;
 using Microsoft.WindowsAzure.Diagnostics;
 using Microsoft.WindowsAzure.ServiceRuntime;
 using Microsoft.WindowsAzure.Storage;
-using Nessos.MBrace.Azure.Runtime;
-using Nessos.MBrace.Azure.Store;
-using Nessos.MBrace.Azure.Runtime.Common;
-using Nessos.MBrace.Store;
+using MBrace.Azure.Runtime;
+using MBrace.Azure.Store;
+using MBrace.Azure.Runtime.Common;
+using MBrace.Store;
 
 namespace MBraceWorkerRole
 {
@@ -27,6 +27,12 @@ namespace MBraceWorkerRole
 
         public override bool OnStart()
         {
+
+
+            string customTempLocalResourcePath = RoleEnvironment.GetLocalResource("CustomTempLocalStore").RootPath;
+            Environment.SetEnvironmentVariable("TMP", customTempLocalResourcePath);
+            Environment.SetEnvironmentVariable("TEMP", customTempLocalResourcePath);
+
             // Set the maximum number of concurrent connections
             ServicePointManager.DefaultConnectionLimit = 12;
 
@@ -36,11 +42,14 @@ namespace MBraceWorkerRole
                             .WithStorageConnectionString("")
                             .WithServiceBusConnectionString("");
 
-            var blobStore = new BlobStore(config.StorageConnectionString);
-            var storeConfig = new CloudFileStoreConfiguration(blobStore, defaultDirectory: "mbracestore");
+            
 
-            _svc = new Service(config, maxTasks: 10, storeConfig: storeConfig, serviceId: RoleEnvironment.CurrentRoleInstance.Id);
+            _svc = new Service(config, serviceId: RoleEnvironment.CurrentRoleInstance.Id);
+            _svc.MaxConcurrentTasks = 1;
             _svc.AttachLogger(new CustomLogger(s => Trace.WriteLine(s)));
+
+
+
 
             return result;
         }
